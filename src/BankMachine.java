@@ -92,7 +92,20 @@ public class BankMachine {
         currencyMap.put(2, "BYN");
     }
 
-    public static User getCurrentUser() {
-        return currentUser;
+    public static void addUser() {
+        User newUser = new User();
+        System.out.println("Введите имя:");
+        newUser.setName(scanner.next());
+        if (Users.userExist(newUser.getName())) {
+            System.out.println("Такой пользователь уже существует");
+            addUser();
+        } else {
+            System.out.println("Введите пин код:");
+            newUser.setPinCode(scanner.nextInt());
+            System.out.println("Введите баланс:");
+            newUser.setBalance(scanner.nextInt());
+            Users.addUser(newUser);
+        }
+
     }
 }

@@ -23,6 +23,17 @@ public class Users {
         System.out.println("]");
     }
 
+    public static boolean userExist(String userName) {
+        boolean userExist = false;
+        for (User user: userList) {
+            if (userName.equals(user.getName())) {
+                userExist = true;
+                break;
+            }
+        }
+        return userExist;
+    }
+
     public static void addThreeUsers() {
         User user1 = new User("Павел", 1234, 1000);
         User user2 = new User("Татьяна", 4567, 2000);

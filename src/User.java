@@ -1,7 +1,10 @@
-public class User {
+public class User{
     private String name;
     private int pinCode;
     private int balance;
+
+    public User() {
+    }
 
     public User(String name, int pinCode, int balance) {
         this.name = name;
